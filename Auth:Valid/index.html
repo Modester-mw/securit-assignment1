@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript"   src="/Users/foundation/Desktop/Auth:Valid/module.js"> </script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Create Account</h2>
+    </div>
+    <form class="form" id="form" onsubmit="event.preventDefault(); checkInputs()">
+        <div class="form-control success">
+            <label> Username</label>
+            <input type="text" placeholder="modester" id="username">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+
+        <div class="form-control error">
+            <label> UserEmail</label>
+            <input type="email" placeholder="mwangi@example.com" id="email">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+            <label> Password</label>
+            <input type="password" placeholder="password" id="password">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error message</small>
+            <div class="password-policies">
+                <li>
+                    <div class="policy-strength">
+                        8 characters
+                    </div> </li>
+                    <li>
+                    <div class="policy-number">
+                        Contain Numbers
+                    </div> </li>
+                    <li>
+                    <div class="policy-uppercase">
+                        Contains Uppercase
+                    </div></li>
+                    <li>
+                    <div class="policy-specialcharcter">
+                        Contains Specialcharacter
+                    </div></li>
+                   </li> 
+        </div>
+
+        <div class="form-control">
+            <label> Confirm Password</label>
+            <input type="password" placeholder="confirm password" id="confirmpassword">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+
+        <button type="submit"  id="submit"> Register</button>
+
+        <i><p>Already have an Account? </p></i>
+
+        <button onclick="location.href='login.html'" type="button">Login</button>
+    </form>
+
+</div>
+
+
+</body>
+
+</html>
