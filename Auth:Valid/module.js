@@ -6,11 +6,34 @@ const confirmpassword = document.getElementById('confirmpassword');
 const submit = document.getElementById('submit')
 
 submit.addEventListener("click", checkInputs);
-form.addEventListener('submit', function(event){
+form.addEventListener('Register', function(event){
     event.preventDefault(); 
 
     checkInputs();
 });
+
+var is_visible = false;
+
+function eye()
+{
+    var input = document.getElementById("password");
+    var eye = document.getElementById("eye");
+    
+    if(is_visible)
+    {
+        input.type = 'password';
+        is_visible = false; 
+        eye.style.color='gray';
+    }
+    else
+    {
+        input.type = 'text';
+        is_visible = true; 
+        eye.style.color='#262626';
+    }
+    
+}
+
 
 function checkInputs(){
     /**get value inputs */
@@ -67,6 +90,56 @@ function setErrorFor(input, message){
 function setSuccessFor(input){
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
+}
+
+
+
+
+function check()
+{
+    var input = document.getElementById("password").value;
+    
+    input=input.trim();
+    document.getElementById("password").value=input;
+    document.getElementById("length").innerText="Count-Password Length : " + input.length;
+    if(input.length>=8)
+    {
+        document.getElementById("char8cter").style.color="green";
+    }
+    else
+    {
+       document.getElementById("char8cter").style.color="red"; 
+    }
+    
+    if(input.length<=10)
+    {
+        document.getElementById("char10cter").style.color="green";
+    }
+    else
+    {
+       document.getElementById("char10cter").style.color="red"; 
+    }
+    
+    if(input.match(/[0-9]/i))
+    {
+        document.getElementById("numcharacter").style.color="green";
+    }
+    else
+    {
+       document.getElementById("numcharacter").style.color="red"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i))
+    {
+        document.getElementById("speccharacter").style.color="green";
+    }
+    else
+    {
+       document.getElementById("speccharacter").style.color="red"; 
+    }
+    
+    
+    
 }
 
 

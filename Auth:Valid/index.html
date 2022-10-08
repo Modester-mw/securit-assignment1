@@ -3,67 +3,66 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript"   src="/Users/foundation/Desktop/Auth:Valid/module.js"> </script>
+    <script src="module.js" defer> </script>
+    <link href="https://fonts.googleapis.com/css?family=Aleo|Slabo+27px" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="header">
         <h2>Create Account</h2>
     </div>
-    <form class="form" id="form" onsubmit="event.preventDefault(); checkInputs()">
-        <div class="form-control success">
+    <form class="form" id="form"  action="connect.php" method="POST">
+        <div class="form-control ">
             <label> Username</label>
-            <input type="text" placeholder="modester" id="username">
+            <input type="text" placeholder="modester" id="username" name="first&lastname">
             <i class="fa fa-check-circle"></i>
             <i class="fa fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
 
-        <div class="form-control error">
+        <div class="form-control ">
             <label> UserEmail</label>
-            <input type="email" placeholder="mwangi@example.com" id="email">
+            <input type="email" placeholder="mwangi@example.com" id="email" name="email">
             <i class="fa fa-check-circle"></i>
             <i class="fa fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
 
-        <div class="form-control">
+        <div class="form-control">                                   
             <label> Password</label>
-            <input type="password" placeholder="password" id="password">
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small>Error message</small>
-            <div class="password-policies">
-                <li>
-                    <div class="policy-strength">
-                        8 characters
-                    </div> </li>
-                    <li>
-                    <div class="policy-number">
-                        Contain Numbers
-                    </div> </li>
-                    <li>
-                    <div class="policy-uppercase">
-                        Contains Uppercase
-                    </div></li>
-                    <li>
-                    <div class="policy-specialcharcter">
-                        Contains Specialcharacter
-                    </div></li>
-                   </li> 
+            <input type="password" id="password" placeholder="Enter password"
+        onInput="check()" name="password"/>
+       <br>
+         <div id="password-policy" >
+        <div id="length">Count-Password : 0</div>
+        <i id="eye" onclick="eye()" class="fa fa-eye"></i>
+         </div>
+           <div id="char8cter">
+                <i class="fa fa-check-circle"></i>  <span> * more than 8 characters</span>
+           </div>
+           <div id="char10cter">
+                <i class="fa fa-check-circle"></i>  <span> * not more than 10 characters</span>
+           </div>
+           <div id="numcharacter">
+                <i class="fa fa-check-circle"></i>  <span> * contains numerical character.</span>
+           </div>
+           <div id="speccharacter">
+                <i class="fa fa-check-circle"></i>   <span> * contains special character.</span>
+           </div>
+                    
         </div>
+        
 
         <div class="form-control">
-            <label> Confirm Password</label>
-            <input type="password" placeholder="confirm password" id="confirmpassword">
+            <label> Confirm Password </label>
+            <input type="password" placeholder="confirm password" id="confirmpassword" name="confirmpassword">
             <i class="fa fa-check-circle"></i>
             <i class="fa fa-exclamation-circle"></i>
             <small>Error message</small>
         </div>
 
-        <button type="submit"  id="submit"> Register</button>
+        <button> Register</button>
 
-        <i><p>Already have an Account? </p></i>
 
         <button onclick="location.href='login.html'" type="button">Login</button>
     </form>
